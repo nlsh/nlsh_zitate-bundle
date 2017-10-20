@@ -1,0 +1,22 @@
+<?php $this->extend('block_searchable'); ?>
+<php dump($this->arrZitate);
+<?php $this->block('content'); ?>
+<?php if ($this->arrError !== null)
+    foreach ($this->arrError as $value) {
+        echo "<div class = 'error'>" . $value . '</div>';
+    } ?>
+<?php if ($this->arrZitate !== null)
+            echo "<div class = 'zitate'>\n";
+
+            foreach ($this->arrZitate as $value) {
+                echo "<div class = 'zitat'>"     . $value['zitat']     . '</div>' . "\n";
+                echo "<div class = 'teaser'>"    . $value['teaser']    . '</div>' . "\n";
+                echo "<div class = 'source'>"    . $value['source']    . '</div>' . "\n";
+                echo "<div class = 'zitateUrl'>" . $value['zitateUrl'] . '</div>' . "\n";
+                echo "<div class = 'autor'>"     . $value['autor']     . '</div>' . "\n";
+                echo "<div class = 'autorUrl'>"  . $value['autorUrl']  . '</div>' . "\n";
+            }
+            echo '</div>';
+?>
+
+<?php $this->endblock(); ?>
